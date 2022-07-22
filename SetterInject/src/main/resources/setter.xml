@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="Student" class="org.setter.Student">
+        <property name="id" value="123" />
+        <property name="name" value="Kevin Drake" />
+        <property name="ph">
+            <list>
+                <ref bean="phone1" />
+                <ref bean="phone2" />
+                <ref bean="phone3" />
+            </list>
+        </property>
+        <property name="add" ref="address" />
+    </bean>
+
+    <bean id="phone1" class="org.setter.Phone">
+        <property name="mob" value="4358688319" />
+    </bean>
+    <bean id="phone2" class="org.setter.Phone">
+        <property name="mob" value="3456789101" />
+    </bean>
+    <bean id="phone3" class="org.setter.Phone">
+        <property name="mob" value="7775556666" />
+    </bean>
+
+    <bean id="address" class="org.setter.Address">
+        <property name="city" value="Cedar City" />
+        <property name="state" value="Utah" />
+        <property name="country" value="United States" />
+        <property name="zipcode" value="84761" />
+    </bean>
+</beans>
